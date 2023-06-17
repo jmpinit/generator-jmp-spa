@@ -53,6 +53,7 @@ module.exports = {
     }),
   ],
   resolve: {
+    extensions: ['.js', '.jsx'],
     fallback: {
       crypto: false,
       fs: false,
