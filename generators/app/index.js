@@ -1,3 +1,4 @@
+const path = require('path');
 const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
@@ -9,5 +10,11 @@ module.exports = class extends Generator {
       undefined,
       { globOptions: { dot: true } }
     );
+
+    const pkgJson = {
+      name: path.basename(process.cwd()),
+    };
+
+    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
   }
 };
